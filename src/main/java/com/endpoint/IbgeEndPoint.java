@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("ibge" )
-public class IbgeEndPoint implements IbgeServiceFeign {
+public class IbgeEndPoint {
 
     private final IbgeRepository ibgeRepository;
     private final UfibgeRepository ufibgeRepository;
@@ -45,11 +45,12 @@ public class IbgeEndPoint implements IbgeServiceFeign {
     public ResponseEntity<?> fidAllRegiaoIbge(){
         return new ResponseEntity<>(regiaoIbgeRepository.findAll(), HttpStatus.OK);
     }
-
+/*
     //End Point Feing   consumindo servico do endereço : //http://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes/3301
     @Override
     public ResponseEntity<?>  getIbge(String id) {
         Long ID = Long.parseLong(id);
-        return new ResponseEntity<>(ibgeRepository.findOne(ID), HttpStatus.OK);
-    }
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }*/
 }

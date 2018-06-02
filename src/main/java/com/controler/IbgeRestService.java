@@ -17,6 +17,12 @@ public class IbgeRestService {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> getId(@PathVariable String id) {
-        return new ResponseEntity<>(ibgeService.getIbge(id),HttpStatus.OK);
+
+        ResponseEntity<?> json = ibgeService.getIbge(id);
+        System.out.println("Body --------"+json.getBody()+"--------------------------");
+
+        return new ResponseEntity<>(json.getBody(),HttpStatus.OK);
     }
+
+
 }
