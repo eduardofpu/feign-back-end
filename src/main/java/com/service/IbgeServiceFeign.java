@@ -10,7 +10,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(name = "ibge", url = "http://servicodados.ibge.gov.br")
 public interface IbgeServiceFeign {
     @RequestMapping("/api/v1/localidades/mesorregioes/{id}")
-    ResponseEntity<?> getIbge(@PathVariable("id") String id);
-
-
+    ResponseEntity<?> getIbgeJson(@PathVariable("id") String id);
 }

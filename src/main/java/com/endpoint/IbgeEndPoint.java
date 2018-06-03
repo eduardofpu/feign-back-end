@@ -45,12 +45,4 @@ public class IbgeEndPoint {
     public ResponseEntity<?> fidAllRegiaoIbge(){
         return new ResponseEntity<>(regiaoIbgeRepository.findAll(), HttpStatus.OK);
     }
-/*
-    //End Point Feing   consumindo servico do endereço : //http://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes/3301
-    @Override
-    public ResponseEntity<?>  getIbge(String id) {
-        Long ID = Long.parseLong(id);
-
-        return new ResponseEntity<>(HttpStatus.OK);
-    }*/
 }
